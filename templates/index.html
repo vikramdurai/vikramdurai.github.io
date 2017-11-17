@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>snippets: vikram's home on the web</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='fonts/vollkorn.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='fonts/lato.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+	</head>
+	<body>
+		<div class="container">
+			<div class="logo-header">
+				<h1>snippets</h1>
+				<p>vikram's home on the web</p>
+				<hr width="255px">
+			</div>
+			<div class="content">
+				{% for p in posts %}
+					<div class="post" style="
+    max-width: 800px;
+    margin-left: 25em;
+">
+						<div class="post-content">
+						{{p.content | safe}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>
